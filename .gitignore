@@ -1,0 +1,47 @@
+node_modules/
+test-results/
+*.log
+release/
+
+# Local agent/editor state and investigation notes are not project source.
+.codex/
+.agents/
+.aws/
+.vscode/
+.idea/
+agents.md
+AGENTS.md
+claude.md
+*_Audit.md
+
+# Secrets and local configuration (never commit production credentials).
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*token*.txt
+*credential*.json
+*credentials*.json
+secrets/
+credentials/
+
+# Generated caches, profiles, temporary files and OS metadata.
+coverage/
+playwright-report/
+blob-report/
+.cache/
+tmp/
+temp/
+*.tmp
+*.bak
+*.tsbuildinfo
+*.crx
+*.zip
+*.har
+*.trace
+.DS_Store
+Thumbs.db
+Desktop.ini
