@@ -16,6 +16,6 @@ Package: `release/warera-tactical-0.1.3.zip`
 
 SHA-256: `cc965c3132dcf779fe32c9115cc1aa5ea06385160f252bb1b0bed3147080bb25`
 
-GitHub access: restored after the publisher updated the connection. The `.gitignore` initialization commit succeeded on `main` (`86301a5b6a396ec0612f5867e10fcefe49fd9a13`). Source and store resources are prepared for the subsequent commit, using only files eligible under `.gitignore`.
+GitHub publication: succeeded after the publisher updated the connection. The `.gitignore` initialization commit is `86301a5b6a396ec0612f5867e10fcefe49fd9a13`. Source commit `fad578fd305cb4082898b7490320bd94f64cbc7a` published all 101 eligible project files to `main`, including 11 PNG assets. The manifest, public policy and ignore rules were read back through GitHub. No dependencies, local agent settings, secrets, release ZIPs or internal audit notes were uploaded.
 
 Store submission: not performed. See `PUBLISHING.md` for publisher actions and Chrome acceptance steps.

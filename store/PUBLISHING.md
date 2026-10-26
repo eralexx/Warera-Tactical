@@ -21,7 +21,7 @@
 
 ## Publisher actions still required
 
-1. Public repository: https://github.com/eralexx/Warera-Tactical. GitHub write access is restored and the initial `.gitignore` commit succeeded. After the source commit, use this repository's Issues page for support and the `store/PRIVACY.md` URL in `LISTING.md` for privacy. Verify those links while signed out before submitting.
+1. Public repository: https://github.com/eralexx/Warera-Tactical. Source and store resources are published on `main` in commit `fad578fd305cb4082898b7490320bd94f64cbc7a`. Use this repository's Issues page for support and the `store/PRIVACY.md` URL in `LISTING.md` for privacy. Verify those links while signed out before submitting.
 2. Publish the supplied policy as a publicly readable repository document or HTTPS page. Enter its verified public URL and the support URL in the store dashboard. A repository-hosted Markdown policy can be linked without enabling GitHub Pages; HTML hosting is optional.
 3. Register or use your Chrome Web Store developer account, complete the dashboard's current contact/account verification and any applicable registration fee. Choose distribution regions, visibility and any publisher/trader disclosures requested by the dashboard.
 4. Upload the ZIP, paste `LISTING.md` copy, and upload the store icon, two listing screenshots and small promo tile. The marquee is optional. Raw popup captures and SVG sources are not store uploads.

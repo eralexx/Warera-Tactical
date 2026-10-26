@@ -2,7 +2,7 @@
 
 ## GitHub publication access restored (2026-10-25)
 
-- The publisher updated the GitHub connection and the `.gitignore` initialization commit succeeded on `eralexx/Warera-Tactical` main: `86301a5b6a396ec0612f5867e10fcefe49fd9a13`. The earlier 403 is resolved. Preparing the source/store commit from Git-eligible paths only; no dependencies, release archives, local agent settings, secrets or internal audit notes are included. Updated `store/PUBLISHING.md` and `store/VALIDATION.md` to reflect restored access. No runtime edits or new Chrome tests in this follow-up; prior validation limitations remain recorded below.
+- The publisher updated the GitHub connection and the `.gitignore` initialization commit succeeded on `eralexx/Warera-Tactical` main: `86301a5b6a396ec0612f5867e10fcefe49fd9a13`. The earlier 403 is resolved. Published all 101 Git-eligible project files (including 11 PNG assets) in source commit `fad578fd305cb4082898b7490320bd94f64cbc7a`, then advanced main without force. No dependencies, release archives, local agent settings, secrets or internal audit notes are included. Credential-pattern scans found no matches. Read back the manifest, privacy policy and ignore rules through GitHub to verify publication. Updated `store/PUBLISHING.md` and `store/VALIDATION.md` to record the result. No runtime edits or new Chrome tests in this follow-up; prior validation limitations remain recorded below. Chrome verification remains: extract/load the release ZIP, confirm branding, test language/preferences and independent feature toggles before store submission.
 
 ## Warera Tactical branding and Chrome Web Store resources (2026-10-25)
 
