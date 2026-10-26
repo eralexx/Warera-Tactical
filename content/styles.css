@@ -1,0 +1,471 @@
+/* Anchor only tiles containing our badge; preserve all native tile dimensions. */
+[id^="item-code-selector-"]:has(> .we-ago-market-badge[data-we-ago="true"][data-anchor="static"]) {
+  position: relative;
+}
+[id^="item-code-selector-"]:has(> .we-ago-market-badge[data-we-ago="true"][data-bargain="true"]) {
+  outline: 2px solid #65d99b;
+  outline-offset: -2px;
+}
+.we-ago-market-badge[data-we-ago="true"] {
+  all: initial;
+  box-sizing: border-box;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  z-index: 2;
+  width: 46px;
+  max-width: calc(100% - 2px);
+  padding: 1px 2px;
+  border-radius: 3px;
+  background: #0d1629ed;
+  color: #d9e8ff;
+  font: 600 11px/1.05 system-ui, sans-serif;
+  white-space: pre;
+  overflow: hidden;
+  cursor: help;
+}
+.we-ago-market-badge[data-we-ago="true"][data-bargain="true"] {
+  color: #a0f0bf;
+  background: #103520f2;
+}
+.we-ago-market-badge[data-we-ago="true"]:focus-visible {
+  outline: 1px solid #a9cdff;
+  outline-offset: 1px;
+}
+
+.we-ago-market-callout[data-we-ago="true"] {
+  all: initial;
+  box-sizing: border-box;
+  position: fixed !important;
+  z-index: 2147483646;
+  display: block;
+  width: 320px;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100vh - 24px);
+  overflow: auto;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid #526b8b;
+  border-radius: 10px;
+  background: #101a29;
+  box-shadow: 0 10px 32px #0009;
+  color: #edf3fc;
+  font: 13px/1.5 system-ui, sans-serif;
+  text-align: left;
+  overflow-wrap: anywhere;
+  pointer-events: auto;
+  color-scheme: dark;
+}
+.we-ago-market-callout[data-we-ago="true"][hidden] { display: none !important; }
+.we-ago-market-callout .we-ago-market-callout-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.we-ago-market-callout .we-ago-market-callout-name { color: #f2f6ff; font-size: 17px; font-weight: 700; }
+.we-ago-market-callout .we-ago-market-callout-label { display: block; margin: 0; color: #a9bad1; font-size: 10px; font-weight: 600; }
+.we-ago-market-callout .we-ago-market-callout-hero { display: flex; flex-direction: column; margin: 14px 0; padding: 12px; border: 1px solid #344c6e; border-radius: 7px; background: #1b2b42; }
+.we-ago-market-callout .we-ago-market-callout-spread { color: #b9d8ff; font-size: 28px; font-weight: 750; line-height: 1.25; font-variant-numeric: tabular-nums; }
+.we-ago-market-callout .we-ago-market-callout-spread-value { color: #c5d5e9; font-size: 12px; }
+.we-ago-market-callout .we-ago-market-callout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0; }
+.we-ago-market-callout .we-ago-market-callout-cell { min-width: 0; }
+.we-ago-market-callout .we-ago-market-callout-value { display: block; margin: 3px 0 0; color: #edf3fc; font-size: 15px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.we-ago-market-callout .we-ago-market-callout-comparison { margin: 14px 0 8px; color: #f2d4a3; font-size: 13px; }
+.we-ago-market-callout[data-bargain="true"] .we-ago-market-callout-comparison { color: #a0f0bf; }
+.we-ago-market-callout .we-ago-market-callout-depth { margin: 8px 0; color: #c9d7e9; font-size: 12px; white-space: pre-line; }
+.we-ago-market-callout .we-ago-market-callout-age { margin: 8px 0; color: #a9bad1; font-size: 11px; }
+.we-ago-market-callout .we-ago-market-callout-state { margin: 8px 0; color: #c0d7f5; font-size: 12px; }
+.we-ago-market-callout .we-ago-market-callout-note { margin: 12px 0 0; padding-top: 10px; border-top: 1px solid #34445c; color: #a9bad1; font-size: 11px; }
+
+/* Market order helper: only three extension-owned buttons. */
+.we-ago-undercut-bar { width: 100%; min-width: 0; margin: 8px 0; }
+.we-ago-undercut-buttons { display: flex; flex-wrap: wrap; gap: 6px; }
+.we-ago-undercut-button {
+  font: 600 13px/1.4 system-ui, sans-serif;
+  color: #e3f6ff;
+  background: #23414e;
+  border: 1px solid #598297;
+  border-radius: 5px;
+  padding: 7px 9px;
+  cursor: pointer;
+}
+.we-ago-undercut-button:hover:enabled { background: #315c6e; border-color: #93defa; }
+.we-ago-undercut-button:disabled { opacity: .45; cursor: default; }
+.we-ago-undercut-button:focus-visible { outline: 2px solid #93defa; outline-offset: 2px; }
+.we-ago-spy-strip[data-we-ago="true"] {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  vertical-align: middle;
+  align-items: center;
+  gap: 4px 8px;
+  width: 220px;
+  max-width: 100%;
+  margin: 5px 0;
+  font: 500 11px/1.4 system-ui, sans-serif;
+  color: #d3dae5;
+  min-width: 0;
+  font-variant-numeric: tabular-nums;
+}
+.we-ago-spy-strip > .we-ago-spy-metric {
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  white-space: nowrap;
+  font: inherit;
+}
+.we-ago-spy-resource {
+  display: block; position: relative; height: 19px; min-width: 0; overflow: hidden;
+  border: 1px solid #49312f; border-radius: 4px; background: #231817; box-sizing: border-box;
+}
+.we-ago-spy-resource[data-resource="hunger"] { border-color: #51412c; background: #292216; }
+.we-ago-spy-resource-fill { display: block; height: 100%; background: linear-gradient(90deg, #a62e38, #db5560); }
+.we-ago-spy-resource[data-resource="hunger"] .we-ago-spy-resource-fill { background: linear-gradient(90deg, #886229, #bd914c); }
+.we-ago-spy-resource-label {
+  display: flex; position: absolute; inset: 0; justify-content: center; align-items: center; gap: 4px;
+  color: #fff4ed; font: 600 11px/1 system-ui, sans-serif; text-shadow: 0 1px 2px #000;
+}
+.we-ago-spy-resource-icon { font-size: 12px; }
+.we-ago-spy-resource[data-known="false"] { background: repeating-linear-gradient(135deg, #222b30, #222b30 5px, #192126 5px, #192126 10px); border-color: #3c4b53; }
+.we-ago-spy-strip [data-state="buff"], .we-ago-spy-legend-item[data-state="buff"] { color: #71d8b3; }
+.we-ago-spy-strip [data-state="debuff"], .we-ago-spy-legend-item[data-state="debuff"] { color: #f7b37b; }
+.we-ago-spy-strip [data-state="unknown"] { color: #aebacb; }
+.we-ago-spy-timeline[data-we-ago="true"] {
+  display: block; box-sizing: border-box; width: 100%; max-width: 600px; min-width: 0;
+  contain: inline-size; flex: 0 1 100%; margin: 12px 0; padding: 12px 0 0;
+  border: 0; border-top: 1px solid #294744; border-radius: 0; background: transparent; color: #b7d0ca;
+  font: 12px/1.5 system-ui, sans-serif; font-variant-numeric: tabular-nums; color-scheme: dark;
+}
+.we-ago-spy-heading { display: block; font: 600 13px/1.5 system-ui, sans-serif; }
+.we-ago-spy-legend { display: flex; gap: 6px 14px; flex-wrap: wrap; margin-top: 6px; }
+.we-ago-spy-chart { display: block; width: 100%; height: auto; overflow: visible; }
+.we-ago-spy-grid { fill: none; stroke: #2e4050; stroke-dasharray: 3 4; }
+.we-ago-spy-axis { fill: #a9baca; font: 16px system-ui, sans-serif; }
+.we-ago-spy-line { fill: none; stroke-width: 2.5; vector-effect: non-scaling-stroke; }
+.we-ago-spy-line[data-state="buff"] { stroke: #71d8b3; }
+.we-ago-spy-line[data-state="debuff"] { stroke: #f7b37b; stroke-dasharray: 8 4; }
+.we-ago-spy-time-input { display: block; box-sizing: border-box; width: 100%; margin: 0; accent-color: #83d5b8; }
+.we-ago-spy-time-input:focus-visible { outline: 2px solid #a5d2ff; outline-offset: 3px; }
+.we-ago-spy-readout, .we-ago-spy-coverage { display: block; overflow-wrap: anywhere; margin-top: 5px; }
+.we-ago-spy-coverage { color: #96aebc; font-size: 11px; }
+.we-ago-spy-fallback[data-we-ago="true"] {
+  position: fixed !important; bottom: 12px; left: 12px; z-index: 1000; box-sizing: border-box;
+  max-width: calc(100vw - 24px); width: max-content; border: 1px solid #344553;
+  border-radius: 7px; background: #101d27; color: #dbe5ee; font: 12px/1.5 system-ui, sans-serif;
+}
+.we-ago-spy-fallback[open] { width: min(600px, calc(100vw - 24px)); max-height: 70vh; overflow: auto; }
+.we-ago-spy-fallback-toggle { padding: 7px 10px; cursor: pointer; }
+.we-ago-spy-fallback > .we-ago-spy-timeline { border: 0; margin: 0; padding: 0 12px 12px; }
+.we-ago-country-builds-card > .we-ago-spy-timeline {
+  width: 100%; max-width: 600px; padding: 12px 0 0; margin: 12px 0 0;
+  border: 0; border-top: 1px dashed #294744; border-radius: 0; background: transparent;
+}
+@media (max-width: 600px) {
+  .we-ago-country-table .we-ago-country-cell:nth-child(4) { display: none; }
+}
+
+/* Values align with the native sides; labels sit at the battle midpoint. */
+.we-ago-battle-panel[data-we-ago="true"] { width: 100%; margin: 6px 0; border-collapse: collapse; table-layout: fixed; background: transparent; color: #b7d0ca; font: 12px/1.5 system-ui, sans-serif; }
+.we-ago-battle-panel .we-ago-battle-value { width: 30%; padding: 4px 10px; text-align: left; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.we-ago-battle-panel .we-ago-battle-value[data-side="attacker"] { text-align: right; }
+.we-ago-battle-panel .we-ago-battle-label { width: 40%; padding: 4px 6px; text-align: center; font-weight: 500; color: #7eaaa1; }
+.we-ago-battle-panel .we-ago-battle-row + .we-ago-battle-row { border-top: 1px solid #294744; }
+/* T008: extension-owned inline company economics. */
+.we-ago-company-card[data-we-ago="true"] {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr));
+  gap: 6px 10px;
+  box-sizing: border-box;
+  flex: 1 1 0%;
+  min-width: 0;
+  width: 100%;
+  max-width: min(360px, 100%);
+  contain: inline-size;
+  margin: 6px 0;
+  padding: 6px 0 0;
+  border: 0;
+  border-top: 1px solid #294744;
+  border-radius: 0;
+  background: transparent;
+  color: #b7d0ca;
+  font: 12px/1.5 system-ui, sans-serif;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.we-ago-company-card[data-we-ago="true"] .we-ago-company-profit .we-ago-company-value { color: #7be3b9; }
+.we-ago-company-card[data-loss="true"] .we-ago-company-profit .we-ago-company-value { color: #ffa2b3; }
+.we-ago-company-card[data-we-ago="true"] .we-ago-company-label { display: block; color: #7eaaa1; font-size: 11px; font-weight: 400; }
+.we-ago-company-card[data-we-ago="true"] > * { min-width: 0; max-width: 100%; }
+.we-ago-company-card[data-we-ago="true"] .we-ago-company-value { display: block; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.we-ago-company-card[data-we-ago="true"] .we-ago-company-advice { grid-column: 1 / -1; padding-top: 6px; border-top: 1px dashed #294744; color: #f2d48b; white-space: pre-line; font-variant-numeric: tabular-nums; }
+.we-ago-company-fallback[data-we-ago="true"] {
+  position: fixed !important;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1000;
+  max-width: min(440px, calc(100vw - 24px));
+  border: 1px solid #34505a;
+  border-radius: 8px;
+  background: #112029;
+  color: #e1edf2;
+  font: 12px/1.5 system-ui, sans-serif;
+  box-shadow: 0 4px 18px #0006;
+}
+.we-ago-company-toggle[data-we-ago="true"] { padding: 8px 12px; cursor: pointer; color: #f2d48b; }
+.we-ago-company-fallback-body[data-we-ago="true"] {
+  padding: 0 10px 8px;
+  max-height: min(60vh, 540px);
+  overflow: auto;
+  overflow-wrap: anywhere;
+}
+.we-ago-company-name[data-we-ago="true"] { grid-column: 1 / -1; font-weight: 600; }
+
+/* T009: independent left-hand dropdown; style only extension-owned nodes. */
+#we-ago-bounty-radar.we-ago-radar-dropdown {
+  all: initial;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1000;
+  max-width: calc(100vw - 24px);
+  color: #e0e9f6;
+  color-scheme: dark;
+  font: 12px/1.5 system-ui, sans-serif;
+}
+#we-ago-bounty-radar * { box-sizing: border-box; }
+#we-ago-bounty-radar .we-ago-radar-summary { display: block; width: max-content; max-width: 100%; padding: 7px 12px; border: 1px solid #405779; border-radius: 8px; background: #101a29; color: #b9d6ff; font-weight: 650; cursor: grab; list-style: none; touch-action: none; user-select: none; }
+#we-ago-bounty-radar.we-ago-radar-dragging .we-ago-radar-summary { cursor: grabbing; }
+#we-ago-bounty-radar .we-ago-radar-summary::after { content: " ▾"; }
+#we-ago-bounty-radar[open] .we-ago-radar-summary::after { content: " ▴"; }
+#we-ago-bounty-radar .we-ago-radar-summary::-webkit-details-marker { display: none; }
+#we-ago-bounty-radar .we-ago-radar-panel { width: 360px; max-width: calc(100vw - 24px); max-height: max(0px, calc(100dvh - var(--we-ago-radar-top, 12px) - 70px)); overflow-y: auto; margin-top: 5px; padding: 10px; border: 1px solid #405779; border-radius: 9px; background: #101a29fa; box-shadow: 0 8px 24px #0006; }
+#we-ago-bounty-radar:not([open]) > .we-ago-radar-panel { display: none; }
+#we-ago-bounty-radar .we-ago-radar-opportunities { display: block; margin: 0; padding: 0; border: 0; color: inherit; font: inherit; }
+#we-ago-bounty-radar .we-ago-radar-rules { display: grid; gap: 9px; margin: 0 0 10px; }
+#we-ago-bounty-radar .we-ago-radar-check { display: flex; align-items: center; gap: 7px; cursor: pointer; }
+#we-ago-bounty-radar .we-ago-radar-checkbox { width: 16px; height: 16px; margin: 0; accent-color: #8cdbb4; }
+#we-ago-bounty-radar .we-ago-radar-thresholds { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+#we-ago-bounty-radar .we-ago-radar-field { display: grid; min-width: 0; gap: 4px; color: #7eaaa1; font-size: 11px; }
+#we-ago-bounty-radar .we-ago-radar-number { width: 100%; min-width: 0; min-height: 30px; border: 1px solid var(--we-ago-border); border-radius: 4px; padding: 5px 7px; color: var(--we-ago-text); background: var(--we-ago-surface); font: inherit; font-size: 12px; }
+#we-ago-bounty-radar button { min-height: 28px; border: 1px solid var(--we-ago-border); border-radius: 4px; background: var(--we-ago-surface); color: var(--we-ago-text); font: inherit; padding: 4px 8px; cursor: pointer; }
+#we-ago-bounty-radar button:disabled { opacity: .5; cursor: wait; }
+#we-ago-bounty-radar .we-ago-radar-save { justify-self: start; }
+#we-ago-bounty-radar .we-ago-radar-list { display: grid; gap: 8px; }
+#we-ago-bounty-radar .we-ago-radar-row { display: flex; align-items: flex-start; gap: 8px; padding: 8px 10px; border: 0; border-left: 2px solid var(--we-ago-accent, var(--we-ago-border)); border-radius: 0; background: transparent; }
+#we-ago-bounty-radar .we-ago-radar-row[data-kind="bounty"] { --we-ago-accent: #8cdbb4; }
+#we-ago-bounty-radar .we-ago-radar-link { display: grid; gap: 2px; min-width: 0; flex: 1; color: var(--we-ago-text); text-decoration: none; overflow-wrap: anywhere; }
+#we-ago-bounty-radar .we-ago-radar-row .we-ago-radar-region { color: var(--we-ago-accent); }
+#we-ago-bounty-radar .we-ago-radar-region { font-size: 12px; font-weight: 650; }
+#we-ago-bounty-radar .we-ago-radar-metric { font-size: 11px; }
+#we-ago-bounty-radar .we-ago-radar-detail { font-size: 11px; color: #7eaaa1; }
+#we-ago-bounty-radar .we-ago-radar-actions { display: flex; flex: none; gap: 4px; align-items: center; }
+#we-ago-bounty-radar .we-ago-radar-value { color: var(--we-ago-text); font-size: 12px; font-weight: 650; font-variant-numeric: tabular-nums; }
+#we-ago-bounty-radar .we-ago-radar-remove { padding: 1px 6px; font-size: 18px; background: transparent; }
+#we-ago-bounty-radar .we-ago-radar-restore { margin-top: 10px; }
+#we-ago-bounty-radar .we-ago-radar-empty, #we-ago-bounty-radar .we-ago-radar-status { margin: 6px 0; color: var(--we-ago-text); overflow-wrap: anywhere; }
+#we-ago-bounty-radar .we-ago-radar-status:empty, #we-ago-bounty-radar [hidden] { display: none; }
+#we-ago-bounty-radar :is(button, input, summary, a):focus-visible { outline: 2px solid var(--we-ago-focus); outline-offset: 2px; }
+
+.we-ago-net-salary[data-we-ago="true"] {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  flex: 0 0 auto;
+  margin-inline: 0.5em 0;
+  padding-inline-start: 0.65em;
+  border-inline-start: 1px solid #56756b66;
+  color: #95cdb8;
+  font-size: 0.8em;
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* T010: inline country census; all selectors belong to the extension. */
+.we-ago-country-builds-card[data-we-ago="true"] { display: block; box-sizing: border-box; width: 100%; max-width: 100%; min-width: 0; contain: inline-size; overflow-wrap: anywhere; flex: 0 0 auto; margin: 16px 0 20px; padding: 0 15px; border: 0; border-radius: 0; background: transparent; color: #b7d0ca; font: 12px/1.5 system-ui, sans-serif; color-scheme: dark; }
+.we-ago-country-fallback[data-we-ago="true"] { position: fixed !important; right: 12px; bottom: 12px; z-index: 2147483000; box-sizing: border-box; width: min(480px, calc(100vw - 24px)); max-height: min(70vh, 640px); overflow: auto; border: 1px solid #35495d; border-radius: 10px; background: #111e2a; color: #e4edf6; font: 12px/1.5 system-ui, sans-serif; color-scheme: dark; }
+.we-ago-country-fallback:not([open]) { width: max-content; max-width: calc(100vw - 24px); }
+.we-ago-country-fallback-toggle { padding: 8px 12px; cursor: pointer; }
+.we-ago-country-fallback > .we-ago-country-builds-card { margin: 0; padding: 0 12px 12px; border: 0; }
+.we-ago-country-builds-card *, .we-ago-country-fallback-toggle { box-sizing: border-box; min-width: 0; }
+.we-ago-country-builds-card [hidden] { display: none !important; }
+.we-ago-country-header, .we-ago-country-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.we-ago-country-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #64989b; }
+.we-ago-country-filters, .we-ago-country-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.we-ago-country-button, .we-ago-country-sort { padding: 3px 7px; border: 1px solid #274744; border-radius: 4px; background: #0c201e; color: #98b7b0; font: inherit; cursor: pointer; }
+.we-ago-country-button[aria-pressed="true"] { border-color: #4c8b75; background: #14372b; color: #96d7af; }
+.we-ago-country-button:disabled { opacity: .5; cursor: default; }
+.we-ago-country-builds-card :is(button, a, summary):focus-visible { outline: 2px solid #91c6f9; outline-offset: 2px; }
+.we-ago-country-bar { display: flex; height: 5px; overflow: hidden; margin: 10px 0 8px; border-radius: 2px; background: #213431; }
+.we-ago-country-segment { display: block; height: 100%; flex: none; }
+.we-ago-country-segment[data-build="eco"] { background: #10b981; }
+.we-ago-country-segment[data-build="damage"] { background: #dc3455; }
+.we-ago-country-segment[data-build="hybrid"] { background: linear-gradient(90deg, #dba943, #a779df); }
+.we-ago-country-pills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.we-ago-country-pill { display: flex; flex-direction: column; gap: 1px; border: 1px solid #29443a; background: #0d251c; padding: 6px 7px; border-radius: 4px; font-variant-numeric: tabular-nums; }
+.we-ago-country-pill-label { font-size: 10px; font-weight: 600; }
+.we-ago-country-pill-value { font-size: 14px; font-weight: 700; }
+.we-ago-country-pill[data-build="damage"] { border-color: #49322f; background: #271b19; }
+.we-ago-country-pill[data-build="hybrid"] { border-color: #44394d; background: #211c29; }
+.we-ago-country-builds-card [data-build="eco"]:not(.we-ago-country-segment) { color: #7be3b9; }
+.we-ago-country-builds-card [data-build="damage"]:not(.we-ago-country-segment) { color: #ffa2b3; }
+.we-ago-country-builds-card [data-build="hybrid"]:not(.we-ago-country-segment) { color: #d9b1fc; }
+.we-ago-country-meta, .we-ago-country-status { color: #7eaaa1; overflow-wrap: anywhere; font-size: 11px; }
+.we-ago-country-meta { margin: 8px 0; }
+.we-ago-country-footer { margin-top: 8px; }
+.we-ago-country-drawer { margin-top: 7px; border-top: 1px dashed #294744; padding-top: 7px; }
+.we-ago-country-toggle { width: fit-content; cursor: pointer; }
+.we-ago-country-scroll { max-height: 320px; overflow: auto; margin-top: 8px; }
+.we-ago-country-table { width: 100%; border-collapse: collapse; font: inherit; text-align: left; font-variant-numeric: tabular-nums; }
+.we-ago-country-cell { padding: 5px 6px; border-bottom: 1px solid #2a3d50; overflow-wrap: anywhere; }
+.we-ago-country-sort { padding: 0; border: 0; background: transparent; white-space: nowrap; }
+.we-ago-country-link { color: #a5d2ff; }
+
+
+/* Radar search extensions: styles remain restricted to owned controls. */
+#we-ago-bounty-radar .we-ago-radar-row[data-kind="contract"] { --we-ago-accent: #c4b5fd; }
+#we-ago-loot-radar.we-ago-loot-section { display: block; margin: 12px 0 0; padding: 12px 0 0; border: 0; border-top: 1px solid var(--we-ago-border); color: inherit; font: inherit; }
+#we-ago-bounty-radar .we-ago-loot-section:first-child { margin: 0; padding: 0; border-top: 0; }
+#we-ago-loot-radar * { box-sizing: border-box; }
+#we-ago-loot-radar .we-ago-loot-title { margin: 0 0 8px; color: var(--we-ago-text); font: 600 12px/1.5 system-ui, sans-serif; }
+#we-ago-loot-radar .we-ago-loot-panel { display: block; margin: 0; padding: 0; }
+#we-ago-loot-radar .we-ago-loot-form { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+#we-ago-loot-radar .we-ago-loot-field { display: grid; min-width: 0; gap: 4px; color: #7eaaa1; font-size: 11px; }
+#we-ago-loot-radar .we-ago-loot-input { width: 100%; min-width: 0; min-height: 30px; padding: 5px 7px; border: 1px solid var(--we-ago-border); border-radius: 4px; background: var(--we-ago-surface); color: var(--we-ago-text); font: inherit; font-size: 12px; }
+#we-ago-loot-radar .we-ago-loot-save { justify-self: start; }
+#we-ago-loot-radar .we-ago-loot-save:disabled { opacity: .5; cursor: wait; }
+#we-ago-loot-radar .we-ago-loot-list { display: grid; gap: 8px; margin-top: 10px; }
+#we-ago-loot-radar .we-ago-loot-result { display: grid; min-width: 0; gap: 2px; padding: 8px 10px; border: 0; border-left: 2px solid var(--we-ago-accent, var(--we-ago-border)); border-radius: 0; background: transparent; color: var(--we-ago-text); text-decoration: none; overflow-wrap: anywhere; }
+#we-ago-loot-radar .we-ago-loot-result[data-rarity="legendary"] { --we-ago-accent: #f4d378; }
+#we-ago-loot-radar .we-ago-loot-result[data-rarity="mythic"] { --we-ago-accent: #ffa09e; }
+#we-ago-loot-radar .we-ago-loot-name { color: var(--we-ago-accent); font-size: 12px; font-weight: 650; }
+#we-ago-loot-radar .we-ago-loot-damage { font-size: 11px; font-variant-numeric: tabular-nums; }
+#we-ago-loot-radar .we-ago-loot-countdown { color: var(--we-ago-text); font-size: 11px; font-variant-numeric: tabular-nums; }
+#we-ago-loot-radar .we-ago-loot-offer { font-size: 11px; color: #7eaaa1; }
+#we-ago-loot-radar .we-ago-loot-status, #we-ago-loot-radar .we-ago-loot-empty { color: var(--we-ago-text); margin: 6px 0; overflow-wrap: anywhere; }
+#we-ago-loot-radar .we-ago-loot-status:empty { display: none; }
+#we-ago-loot-radar :is(button, input, summary, a):focus-visible { outline: 2px solid var(--we-ago-focus); outline-offset: 2px; }
+#we-ago-bounty-radar button:not(:disabled):hover { border-color: #7eaaa1; }
+#we-ago-bounty-radar .we-ago-radar-row:has(a:hover),
+#we-ago-loot-radar .we-ago-loot-result:hover { background: #132d29; }
+
+
+/* T011: only extension nodes receive presentation state. */
+.we-ago-cped-badge, .we-ago-pill-roi {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 5px 8px;
+  border: 1px solid #64748b;
+  border-radius: 6px;
+  background: #172334;
+  color: #e2e8f0;
+  font: 11px/1.5 system-ui, sans-serif;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.we-ago-cped-badge { margin-top: 5px; }
+.we-ago-cped-best { border-color: #4ade80; color: #bbf7d0; background: #123729; }
+/* Outline follows the owned badge and vanishes when that badge is removed. */
+div:has(> div > .we-ago-cped-best) { outline: 1px solid #4ade80; outline-offset: -1px; }
+.we-ago-pill-roi {
+  margin: 8px 0;
+  padding: 8px 0 0;
+  border: 0;
+  border-top: 1px solid #294744;
+  border-radius: 0;
+  background: transparent;
+  color: #b7d0ca;
+  font: 12px/1.5 system-ui, sans-serif;
+}
+.we-ago-combat-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 3px; }
+.we-ago-combat-label { display: inline-flex; align-items: center; gap: 4px; }
+.we-ago-combat-label[hidden] { display: none; }
+.we-ago-combat-scope { color: #7eaaa1; font-size: 11px; }
+.we-ago-combat-costs { margin: 6px 10px; font-size: 11px; font-variant-numeric: tabular-nums; }
+.we-ago-combat-table { width: 100%; border-collapse: collapse; table-layout: fixed; font: inherit; }
+.we-ago-combat-profit { width: 30%; padding: 4px 10px; text-align: left; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.we-ago-combat-profit[data-side="attacker"] { text-align: right; }
+.we-ago-combat-metric { width: 40%; padding: 4px 6px; text-align: center; font-weight: 500; color: #7eaaa1; overflow-wrap: anywhere; }
+.we-ago-combat-hits, .we-ago-combat-ammo, .we-ago-combat-mode {
+  box-sizing: border-box;
+  min-height: 26px;
+  max-width: 120px;
+  border: 1px solid #274744;
+  border-radius: 4px;
+  background: #0c201e;
+  color: #b7d0ca;
+  font: inherit;
+}
+.we-ago-combat-hits { width: 85px; }
+.we-ago-combat-gain { color: #86efac; }
+.we-ago-combat-loss { color: #fda4af; }
+
+/* One native disclosure group prevents extension panels covering each other.
+   Opaque floating surfaces share the census palette; native nodes are untouched. */
+:is(#we-ago-bounty-radar, .we-ago-country-fallback, .we-ago-spy-fallback, .we-ago-company-fallback)[data-we-ago="true"] {
+  --we-ago-surface: #0c201e;
+  --we-ago-border: #274744;
+  --we-ago-text: #b7d0ca;
+  --we-ago-focus: #91c6f9;
+}
+:is(.we-ago-country-fallback, .we-ago-spy-fallback, .we-ago-company-fallback)[data-we-ago="true"] { z-index: 1000; }
+#we-ago-bounty-radar .we-ago-radar-panel,
+:is(.we-ago-country-fallback, .we-ago-spy-fallback, .we-ago-company-fallback)[data-we-ago="true"] {
+  border: 1px solid var(--we-ago-border);
+  border-radius: 4px;
+  background: var(--we-ago-surface);
+  color: var(--we-ago-text);
+  box-shadow: 0 8px 24px #0006;
+  color-scheme: dark;
+}
+#we-ago-bounty-radar .we-ago-radar-summary,
+:is(.we-ago-country-fallback-toggle, .we-ago-spy-fallback-toggle, .we-ago-company-toggle)[data-we-ago="true"] {
+  box-sizing: border-box;
+  padding: 6px 10px;
+  border-radius: 4px;
+  color: var(--we-ago-text);
+  font: 600 12px/1.5 system-ui, sans-serif;
+  cursor: pointer;
+  list-style: none;
+  overflow-wrap: anywhere;
+}
+#we-ago-bounty-radar .we-ago-radar-summary {
+  border: 1px solid var(--we-ago-border);
+  background: var(--we-ago-surface);
+  cursor: grab;
+}
+details[name="we-ago-floating"][data-we-ago="true"] > summary::-webkit-details-marker { display: none; }
+details[name="we-ago-floating"][data-we-ago="true"] > summary::after { content: " ▾"; }
+details[name="we-ago-floating"][data-we-ago="true"][open] > summary::after { content: " ▴"; }
+:is(#we-ago-bounty-radar, .we-ago-country-fallback, .we-ago-spy-fallback, .we-ago-company-fallback)[data-we-ago="true"] summary:focus-visible,
+.we-ago-pill-roi :is(input, select):focus-visible { outline: 2px solid var(--we-ago-focus, #91c6f9); outline-offset: 2px; }
+.we-ago-company-fallback .we-ago-company-card { max-width: 100%; }
+
+/* Native coin silhouette, drawn locally; all monetary units belong to owned nodes. */
+svg.we-ago-gold-icon[data-we-ago="true"] {
+  display: inline-block; width: 1em; height: 1em; flex: none;
+  vertical-align: -.12em; fill: currentColor; color: #dba943;
+  filter: drop-shadow(1px 1px 0 #000); overflow: visible;
+}
+.we-ago-combat-costs { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 7px; }
+.we-ago-combat-money { white-space: nowrap; }
+.we-ago-combat-costs > .we-ago-combat-cost-label:first-child { flex-basis: 100%; color: #7eaaa1; }
+.we-ago-combat-status, .we-ago-undercut-status { margin: 6px 0 0; color: #b7d0ca; font: 11px/1.5 system-ui, sans-serif; overflow-wrap: anywhere; }
+.we-ago-combat-status:empty, .we-ago-undercut-status:empty { display: none; }
+
+#we-ago-bounty-radar :is(.we-ago-radar-filters,.we-ago-loot-filters){margin-top:10px;border-top:1px solid var(--we-ago-border);padding-top:8px}
+#we-ago-bounty-radar :is(.we-ago-radar-filter-title,.we-ago-loot-filter-title){cursor:pointer;color:var(--we-ago-muted, #7eaaa1);font-size:11px;margin-bottom:8px}
+.we-ago-market-callout .we-ago-market-callout-spread{font-size:20px}
+.we-ago-market-callout .we-ago-market-callout-hero{background:transparent;border:0;padding:0}
+.we-ago-market-callout[data-we-ago="true"]{background:#0c201e;border-color:#274744;color:#b7d0ca}
+
+
+.we-ago-cped-badge[data-we-ago="true"]{display:flex;flex-wrap:wrap;gap:4px 12px;padding:4px 0;border:0;border-radius:0;background:transparent;color:#b7d0ca}
+.we-ago-cped-badge.we-ago-cped-best{background:transparent;color:#8cdbb4}
+
+
+/* Compact combat estimates: side values frame a short icon/metric label. */
+.we-ago-pill-roi .we-ago-combat-profit { padding: 3px 6px; width: 29%; }
+.we-ago-pill-roi .we-ago-combat-metric { padding: 3px 4px; width: 42%; font-size: 11px; }
+.we-ago-combat-metric::before { content: attr(data-icon); margin-inline-end: 4px; }
+.we-ago-full-burst .we-ago-combat-controls { align-items: center; justify-content: space-between; gap: 4px; margin: 0 0 4px; }
+.we-ago-combat-food { background: #102b32; color: #dcebe7; border: 1px solid #43666c; border-radius: 4px; padding: 3px 5px; max-width: 125px; font: inherit; }
+.we-ago-full-burst .we-ago-combat-row:has([data-metric="net"]) { border-top: 1px solid #43666c; font-weight: 600; }

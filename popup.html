@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="Warera Tactical settings">Warera Tactical settings</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="shared/features.js" defer></script>
+  <script src="locales/es.js" defer></script>
+  <script src="i18n.js" defer></script>
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <header><span class="eyebrow">WARERA TACTICAL</span><h1><span data-i18n="Settings">Settings</span></h1></header>
+  <main>
+    <div class="card language-setting">
+      <label for="language" data-i18n="Language">Language</label>
+      <select id="language" disabled><option value="en" lang="en">English</option><option value="es" lang="es">Español</option></select>
+      <p id="language-status" class="status" role="status" aria-live="polite"></p>
+    </div>
+    <form id="features-form" class="card">
+      <h2><span data-i18n="Features">Features</span></h2>
+      <label class="feature-option"><input id="feature-passiveCache" type="checkbox" checked><span><span data-i18n="Cache warming">Cache warming</span></span></label>
+      <label class="feature-option"><input id="feature-market" type="checkbox" checked><span><span data-i18n="Market badges &amp; bargains">Market badges &amp; bargains</span></span></label>
+      <label class="feature-option"><input id="feature-marketUndercut" type="checkbox" checked><span><span data-i18n="Order price helper">Order price helper</span></span></label>
+      <label class="feature-option"><input id="feature-battle" type="checkbox" checked><span><span data-i18n="Battle pills &amp; remaining damage">Battle pills &amp; remaining damage</span></span></label>
+      <label class="feature-option"><input id="feature-equipmentCped" type="checkbox" checked><span><span data-i18n="Equipment damage &amp; value">Equipment damage &amp; value</span></span></label>
+      <label class="feature-option"><input id="feature-fullBurst" type="checkbox" checked><span data-i18n="Full burst damage &amp; profit">Full burst damage &amp; profit</span></label>
+      <label class="feature-option"><input id="feature-pillRoi" type="checkbox" checked><span><span data-i18n="Average damage per hit">Average damage per hit</span></span></label>
+      <label class="feature-option"><input id="feature-spyXray" type="checkbox" checked><span><span data-i18n="Player HP, hunger, damage &amp; pill timer">Player HP, hunger, damage &amp; pill timer</span></span></label>
+      <label class="feature-option"><input id="feature-pillTimeline" type="checkbox" checked><span><span data-i18n="Country &amp; MU pill timeline">Country &amp; MU pill timeline</span></span></label>
+      <label class="feature-option"><input id="feature-companyAdvisor" type="checkbox" checked><span><span data-i18n="Company advisor">Company advisor</span></span></label>
+      <label class="feature-option"><input id="feature-netSalary" type="checkbox" checked><span><span data-i18n="Net salary">Net salary</span></span></label>
+      <label class="feature-option"><input id="feature-bountyRadar" type="checkbox" checked><span><span data-i18n="Bounty radar &amp; notifications">Bounty radar &amp; notifications</span></span></label>
+      <label class="feature-option"><input id="feature-contractRadar" type="checkbox" checked><span><span data-i18n="Contract radar">Contract radar</span></span></label>
+      <label class="feature-option"><input id="feature-lootRadar" type="checkbox" checked><span><span data-i18n="Legendary / mythic loot targets">Legendary / mythic loot targets</span></span></label>
+      <label class="feature-option"><input id="feature-lootRoundTimer" type="checkbox" checked><span><span data-i18n="Loot target round countdown">Loot target round countdown</span></span></label>
+      <label class="feature-option"><input id="feature-countryBuilds" type="checkbox" checked><span><span data-i18n="Country &amp; MU build summary">Country &amp; MU build summary</span></span></label>
+      <p class="hint"><span data-i18n="Saved changes apply to open WarEra tabs.">Saved changes apply to open WarEra tabs.</span></p>
+      <button type="submit"><span data-i18n="Save features">Save features</span></button>
+      <p id="features-status" class="status" role="status" aria-live="polite"></p>
+    </form>
+
+    <details id="radar-menu" class="card">
+      <summary><span data-i18n="Radar settings">Radar settings</span></summary>
+      <form id="radar-form" class="details-body">
+        <label for="radar-bounty"><span data-i18n="Minimum bounty per 1k damage">Minimum bounty per 1k damage</span> <svg class="we-ago-gold-icon" data-we-ago="true" viewBox="0 0 24 24" role="img" aria-label="Gold" data-i18n-aria-label="Gold" focusable="false"><path class="we-ago-gold-icon" data-we-ago="true" d="M12 5C7.031 5 2 6.546 2 9.5S7.031 14 12 14c4.97 0 10-1.546 10-4.5S16.97 5 12 5zm-5 9.938v3c1.237.299 2.605.482 4 .541v-3a21.166 21.166 0 0 1-4-.541zm6 .54v3a20.994 20.994 0 0 0 4-.541v-3a20.994 20.994 0 0 1-4 .541zm6-1.181v3c1.801-.755 3-1.857 3-3.297v-3c0 1.44-1.199 2.542-3 3.297zm-14 3v-3C3.2 13.542 2 12.439 2 11v3c0 1.439 1.2 2.542 3 3.297z"></path></svg></label>
+        <input id="radar-bounty" type="number" min="0" step="any" value="1" required>
+        <button type="submit"><span data-i18n="Save radar">Save radar</span></button>
+      <p id="radar-status" class="status" role="status" aria-live="polite"></p></form>
+    </details>
+
+    <details id="display-menu" class="card">
+      <summary><span data-i18n="Market display">Market display</span></summary>
+      <form id="display-form" class="details-body">
+        <label for="market-font-size"><span data-i18n="Badge size">Badge size</span> <output id="market-font-value" for="market-font-size">11 px</output></label>
+        <input id="market-font-size" type="range" min="7" max="14" step="1" value="11">
+        <div id="market-font-preview" aria-label="Market badge preview" data-i18n-aria-label="Market badge preview">S0.3%<br>Δ−1.5%</div>
+        <div class="actions"><button type="submit"><span data-i18n="Save display">Save display</span></button><button id="reset-display" type="button" class="secondary"><span data-i18n="Reset size">Reset size</span></button></div>
+        <p id="display-status" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </details>
+
+    <details id="api-menu" class="card">
+      <summary><span data-i18n="API connection">API connection</span> <span id="connection-state" class="summary-state"><span data-i18n="Loading…">Loading…</span></span></summary>
+      <form id="settings-form" class="details-body">
+        <fieldset class="provider-options">
+          <legend><span data-i18n="Provider">Provider</span></legend>
+          <div class="provider-choices">
+            <label><input id="api-official" type="radio" name="api-provider" value="official" checked><span data-i18n="Official">Official</span></label>
+            <label><input id="api-gateway" type="radio" name="api-provider" value="gateway"><span data-i18n="Community Gateway">Community Gateway</span></label>
+          </div>
+          <p class="hint"><span data-i18n="Gateway falls back to Official if unavailable. Official retries rate-limited requests once through warerastats.io. Gateway requests share your API credential and query with that service. Unsupported endpoints use Official.">Gateway falls back to Official if unavailable. Official retries rate-limited requests once through warerastats.io. Gateway requests share your API credential and query with that service. Unsupported endpoints use Official.</span></p>
+        </fieldset>
+        <label for="token"><span data-i18n="API token">API token</span></label>
+        <input id="token" type="password" autocomplete="off" spellcheck="false" placeholder="Paste token to save or replace" data-i18n-placeholder="Paste token to save or replace" aria-describedby="token-state token-help">
+        <p id="token-state" class="hint"><span data-i18n="Checking saved settings…">Checking saved settings…</span></p>
+        <p id="token-help" class="hint"><span data-i18n="Stored in this Chrome profile. Leave blank to keep your saved token.">Stored in this Chrome profile. Leave blank to keep your saved token.</span></p>
+        <label for="player-id"><span data-i18n="Player ID">Player ID</span></label>
+        <input id="player-id" type="text" autocomplete="off" spellcheck="false" pattern="[a-fA-F0-9]{24}" placeholder="24-character ID from your profile URL" data-i18n-placeholder="24-character ID from your profile URL" aria-describedby="player-id-help">
+        <p id="player-id-help" class="hint"><span data-i18n="Required for player, equipment and company calculations. Copy the ID after /user/ in your profile URL.">Required for player, equipment and company calculations. Copy the ID after /user/ in your profile URL.</span></p>
+        <div class="actions"><button type="submit"><span data-i18n="Save connection">Save connection</span></button><button id="remove-token" type="button" class="text-button"><span data-i18n="Remove token">Remove token</span></button></div>
+      <p id="connection-status" class="status" role="status" aria-live="polite"></p></form>
+    </details>
+
+    <details id="cache-menu" class="card">
+      <summary><span data-i18n="Cache options">Cache options</span></summary>
+      <div class="details-body">
+        <form id="cache-form">
+          <fieldset>
+            <legend><span data-i18n="Cache lifetime · seconds">Cache lifetime · seconds</span></legend>
+            <div class="ttl-grid">
+              <label for="ttl-live"><span data-i18n="Battles / orders">Battles / orders</span><input id="ttl-live" type="number" min="0" max="172800" step="1" required value="120"></label>
+              <label for="ttl-static"><span data-i18n="Regions / countries">Regions / countries</span><input id="ttl-static" type="number" min="0" max="172800" step="1" required value="600"></label>
+              <label for="ttl-default"><span data-i18n="Other queries">Other queries</span><input id="ttl-default" type="number" min="0" max="172800" step="1" required value="120"></label>
+            </div>
+            <p class="hint"><span data-i18n="Fallback lifetimes only. Endpoint-specific lifetimes take priority; 0 disables fallback caching.">Use 0 to disable a group. Endpoint defaults and request overrides take priority.</span></p>
+          </fieldset>
+          <button type="submit"><span data-i18n="Save cache">Save cache</span></button>
+        </form>
+        <p id="cache-status" class="status" role="status" aria-live="polite"></p>
+        <section aria-labelledby="cache-title">
+          <div class="section-heading"><h2 id="cache-title"><span data-i18n="Cached responses">Cached responses</span> <span id="cache-count">0</span></h2><div class="actions"><button id="refresh-cache" type="button" class="secondary"><span data-i18n="Refresh">Refresh</span></button><button id="clear-cache" type="button" class="secondary"><span data-i18n="Clear">Clear</span></button></div></div>
+          <p class="hint"><span data-i18n="Clearing responses keeps your connection settings.">Clearing responses keeps your connection settings.</span></p>
+          <div class="actions"><button id="cache-prev" type="button" class="secondary" disabled data-i18n="Previous">Previous</button><button id="cache-next" type="button" class="secondary" disabled data-i18n="Next">Next</button></div>
+          <ul id="cache-list"><li><span data-i18n="No cached responses.">No cached responses.</span></li></ul>
+        </section>
+      </div>
+    </details>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>
+

@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "strict": false,
+    "types": []
+  },
+  "files": ["shared/contracts.d.ts", "shared/features.js", "shared/domain.js", "shared/cache.js", "shared/scans.js", "content/api.js"]
+}
